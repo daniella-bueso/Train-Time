@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Train Time</title>
+
+	<!-- CSSS Links -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+	<!-- Header and main content -->
+	<div class="container">
+		<div class="jumbotron">
+			<h1> Metro North Train</h1>
+		</div>
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Train Schedule
+				</div>
+				<div class="panel-body">
+					<table class="table table-striped">
+						<thead>
+      						<tr>
+						        <th>Train Name</th>
+						        <th>Destination</th>
+						        <th>Frequency (min)</th>
+						        <th>Next Arrival</th>
+						        <th>Minutes Away</th>
+					     	</tr>
+					    </thead>
+					    <tbody class="train-content">
+					    </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- End of Main Content -->
+
+		<!-- Add Train Area -->
+		<div class="row">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Add Train
+				</div>
+				<div class="panel-body">
+					<form>
+			    		<div class="form-group">
+			    			<label>Train Name </label>
+			    			<br>
+			    			<input id="name" type="text" placeholder=>
+			    		</div>
+
+						<div class="form-group">
+				    		<label>Destination</label>
+				    		<br>
+				    		<input id="destination" type="text" placeholder=>
+				    	</div>
+
+			    		<div class="form-group">
+				    		<label>First Train Time (HH:mm Military Time) </label>
+				    		<br>
+				    		<input id="first-train" type="text" placeholder=>
+				    	</div>
+
+			    		<div class="form-group">
+				    		<label>Frequency (min)</label>
+				    		<br>
+				    		<input id="frequency" type="text" placeholder=>
+				    	</div>
+			  
+			    		<button type="submit" class="btn" id="add-train-btn" data-toggle="modal">Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- Start of Modal -->
+		<div class="modal fade" tabindex="-1" role="dialog">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title">Changes</h4>
+		      </div>
+		      <div class="modal-body">
+		        <p>Your train has been successfully added to the schedule!&hellip;</p>
+		      </div>
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-default close" data-dismiss="modal">Close</button>
+		      </div>
+		    </div><!-- /.modal-content -->
+		  </div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</div>
+	<!-- End of Add Train Area -->
+
+	<!-- END OF HTML -->
+	
+	<!-- LINK TO FIREBASE GOES HERE -->
+  	<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+
+	<!-- Link to Moments -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.4/moment.min.js"></script>
+
+  	<!-- Javascript & jQuery -->
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="assets/javascript/app.js"></script>
+  	
+  	
