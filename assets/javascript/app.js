@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+// var modal = $("#myModal");
+
 // Initialize Firebase
 
   var trainObj = {};
@@ -19,9 +21,6 @@ $(document).ready(function() {
 
     var database = firebase.database();
 
-    var modal = $(".modal");
-    var close = $(".close");
-
     // Capture Button Click
     $("#add-train-btn").on("click", function() {
       // Stops the page from refreshing
@@ -39,13 +38,9 @@ $(document).ready(function() {
       $("#name").val("");
       $("#destination").val("");
       $("#first-train").val("");
-      $("frequency").val("");
+      $("#frequency").val("");
 
-      modal = show.bs.modal
-
-      $(".close").on("click", function() {
-        modal = hide.bs.modal;
-      })
+      // $('#myModal').modal("toggle");
 
   	});
 
@@ -85,10 +80,6 @@ $(document).ready(function() {
       // adds minutes to last arrival for next arrival
       var nextArrival = moment().add(minutes, "minutes").format("hh:mm A");
       console.log("arrival time: "+ nextArrival);
-
-      // $(".train-content > tbody").append("<tr><td>" + name + "</td><td>" + destination + 
-      //   "</td><td>" + frequency + "</td><td>" + nextArrival + "</td><td>" + 
-      //   minutes + "</td></tr>");
 
       var newTR = $("<tr>");
 
