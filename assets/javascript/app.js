@@ -57,8 +57,8 @@ $(document).ready(function() {
       
       var destination = childSnapshot.val().destination;
       
-      // converts first train time to Unix
-      var firstTrain = moment(childSnapshot.val().firstTrain, 'HH:mm').subtract(1, "years");
+      // calculates firstTrain time and substracts a year so the time is not in the past
+      var firstTrain = moment(childSnapshot.val().firstTrain, 'HH:mm').subtract(1, "years").format("HH:mm A");
       console.log("first train at: " + firstTrain);
       
       // stores frequency of train in a variable
@@ -66,7 +66,7 @@ $(document).ready(function() {
       console.log("frequency of train: " + frequency);
       
       // calculates the difference between the first train and the current time
-      var difference = moment().diff(moment(firstTrain), "minutes");
+      var difference = moment().diff(moment(firstTrain, "HH:mm A"), "minutes");
       console.log("diff between first train and current time: " + difference);
       
       // calculates the times the train has arrived from first train to now
@@ -90,6 +90,10 @@ $(document).ready(function() {
       var newDestination = $("<td>");
       newDestination.html(destination);
       newTR.append(newDestination);
+
+      var newFirstTrain = $("<td>");
+      newFirstTrain.html(firstTrain);
+      newTR.append(newFirstTrain);
 
       var newFrequency = $("<td>");
       newFrequency.html(frequency);
